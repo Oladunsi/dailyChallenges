@@ -3,12 +3,7 @@ def bubbleSort(arr=[]):
         return self.arr
     firstItem = self.arr[0]
     counter = 0
-    left = []
-    for i in self.arr:
-        if i < firstItem:
-            counter += 1
-            left.append(i)
-    self.swaps.append(counter)
+    left = [i for i in self.arr if i < firstItem]
     middle = [i for i in self.arr if i == firstItem]
     right = [i for i in self.arr if i > firstItem]
     return self.bubbleSort(left) + middle + self.bubbleSort(right)
